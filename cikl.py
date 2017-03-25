@@ -18,7 +18,7 @@
 #s_valera_with_us = find_person('Маша')
 def ask_user(): 
     while True:
-        user_say = input('Как дела: ')
+        user_ask = input('Задайте вопросы: ')
         if user_say == 'Пока':
             break
         else:
