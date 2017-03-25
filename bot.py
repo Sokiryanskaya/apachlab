@@ -3,7 +3,7 @@ def main():
     updater = Updater("351428863:AAGr6X6lZkSFRPNX5CiX_8fVKuf5gmxeD4o")
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", greet_user))
-    dp.add_handler(MessageHandler([Filters.text], talk_to_me))
+    dp.add_handler(MessageHandler((Filters.text | Filters.venue) & Filters.forwarded, talk_to_me))
     dp.add_error_handler(show_error)
     updater.start_polling()
     updater.idle()
